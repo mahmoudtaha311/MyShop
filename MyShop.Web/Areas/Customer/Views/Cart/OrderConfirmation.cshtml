@@ -1,0 +1,26 @@
+﻿@model int
+
+<div class="container pt-5">
+    <div class="row justify-content-center align-items-center">
+        <!-- قسم الشكر والصورة -->
+        <div class="col-12 text-center">
+            <h3 class="display-4 text-primary fw-bold">Thank You!</h3>
+            <p class="lead text-muted">Your support means the world to us</p>
+            <img src="https://i.imgur.com/GwStPmg.png" class="img-fluid my-4 shadow-lg rounded-circle" alt="Thank You" style="max-width: 200px; height: auto;" />
+        </div>
+
+        <!-- قسم تأكيد الطلب -->
+        <div class="col-12 text-center">
+            <div class="p-4 bg-white border rounded shadow-lg" style="max-width: 600px; margin: auto;">
+                <h2 class="h4 text-dark">Your Order Number <strong class="text-success">@Model</strong> has been placed successfully!</h2>
+                <p class="mt-3 text-muted">You will receive a confirmation email with your order details soon.</p>
+            </div>
+        </div>
+
+        <!-- زر العودة إلى الصفحة الرئيسية -->
+        <div class="col-12 text-center mt-4 mb-5">
+            <!-- إضافة mb-5 هنا -->
+            <a href="/" class="btn btn-outline-primary btn-lg px-4 py-3 shadow-lg">Back to Home</a>
+        </div>
+    </div>
+</div>

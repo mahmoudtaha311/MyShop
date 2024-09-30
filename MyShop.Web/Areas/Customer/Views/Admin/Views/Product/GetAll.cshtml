@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["PageDescreption"] = "View Products";
+    ViewData["PageTitle"] = "Product Mangement";
+    
+}
+<div class="container mt-5">
+
+    <a asp-action="CreateProduct" asp-controller="Product" class="btn btn-primary btn-sm">Add Product</a>
+
+    <table class="table table-striped table-bordered" id="mytable">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+       
+    </table>
+</div>
+
+<style>
+    .container {
+        max-width: 800px;
+    }
+
+    h2 {
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        margin-top: 20px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+</style>
+
+@section Scripts
+{
+    <script src="~/js/product.js" ></script>
+}

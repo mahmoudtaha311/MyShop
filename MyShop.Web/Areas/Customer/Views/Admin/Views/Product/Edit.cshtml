@@ -1,0 +1,104 @@
+﻿@model ProductVM
+@{
+    ViewData["PageDescreption"] = " Edit Product";
+    ViewData["PageTitle"] = "Product Management";
+   
+}
+
+<div class="container mt-5">
+   
+    <form method="post" asp-action="Edit" class="bg-light p-4 rounded shadow-sm" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+        <input asp-for="Product.Id" hidden />
+        <input asp-for="Product.Img" hidden />
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label asp-for="Product.Name" class="font-weight-bold"></label>
+                    <input asp-for="Product.Name" class="form-control" placeholder="Enter product name" />
+                    <span asp-validation-for="Product.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Product.Description" class="font-weight-bold"></label>
+                    <textarea asp-for="Product.Description" class="form-control" rows="3" placeholder="Enter product description"></textarea>
+                    <span asp-validation-for="Product.Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Product.Price" class="font-weight-bold"></label>
+                    <input asp-for="Product.Price" class="form-control" placeholder="Enter product price" />
+                    <span asp-validation-for="Product.Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Product.Img" class="font-weight-bold"></label>
+                    <input type="file" name="file" id="imgfile" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Product.categoryId" class="font-weight-bold"></label>
+                    <select asp-items="Model.CategoryList" asp-for="Product.categoryId" class="form-control">
+                        <option disabled> -- Select Category -- </option>
+                    </select>
+                </div>
+
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <h4>Current Image</h4>
+                <img src="~/@Model.Product.Img" class="img-fluid rounded shadow-sm mt-3" alt="Product Image" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .container {
+        max-width: 800px;
+    }
+
+    h2 {
+        color: #007bff;
+    }
+
+    .form-control {
+        margin-bottom: 15px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    }
+
+    .alert-danger {
+        margin-bottom: 20px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
